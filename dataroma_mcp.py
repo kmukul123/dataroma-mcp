@@ -48,7 +48,7 @@ signal.signal(signal.SIGTERM, handle_signal)
 
 def populate_homepage_cache():
     """Fetches the homepage and populates all relevant aggregate caches at once."""
-    print("Performing One-Shot homepage scrape...")
+    sys.stderr.write("Performing One-Shot homepage scrape...\n")
     data = scrape_homepage()
     if "error" in data:
         return
@@ -90,7 +90,7 @@ def get_cached_data(key, scraper_func, ttl_hours, *args):
             return CACHE[key]['data']
 
     # Refresh specific cache (Lazy Load for holdings/insiders)
-    print(f"Cache miss for {key}. Scraping...")
+    sys.stderr.write(f"Cache miss for {key}. Scraping...\n")
     data = scraper_func(*args)
     if "error" not in data:
         CACHE[key] = {
