@@ -195,6 +195,9 @@ def invalidate_cache(key: str = "all"):
     save_cache()
     return {"status": "success", "message": message}
 
-if __name__ == "__main__":
+def main():
     load_cache()
     mcp.run()
+
+if __name__ == "__main__":
+    main()

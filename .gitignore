@@ -1,4 +1,4 @@
-﻿__pycache__/
+__pycache__/
 *.pyc
 *.pyo
 *.pyd
@@ -6,3 +6,9 @@
 env/
 venv/
 dataroma_cache.json
+build/
+dist/
+*.egg-info/
+
+dataroma_mcp.egg-info
+/.env

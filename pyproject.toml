@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dataroma-mcp"
+version = "0.1.2"
+description = "An MCP server for Dataroma to access superinvestor holdings and trades"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "mcp",
+    "beautifulsoup4",
+    "requests"
+]
+authors = [
+    { name = "Onefoot Hurdle", email = "onefoothurdle@gmail.com" }
+]
+
+[project.urls]
+Homepage = "https://github.com/kmukul123/dataroma-mcp"
+Repository = "https://github.com/kmukul123/dataroma-mcp"
+
+[project.scripts]
+dataroma-mcp = "dataroma_mcp:main"
+
+[tool.setuptools]
+py-modules = ["dataroma_mcp", "dataroma_scraper"]
