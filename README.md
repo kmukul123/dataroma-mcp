@@ -29,7 +29,7 @@ Add this to your `claude_desktop_config.json`:
 ```json
 {
   "mcpServers": {
-    "dataroma": {
+    "dataroma-mcp": {
       "command": "uvx",
       "args": ["dataroma-mcp"]
     }
@@ -49,7 +49,7 @@ Add this to your `claude_desktop_config.json`:
 Add to your `config.toml`:
 ```toml
 [[mcp.servers]]
-name = "Dataroma"
+name = "dataroma-mcp"
 transport = "stdio"
 command = "uvx"
 args = ["dataroma-mcp"]
@@ -58,9 +58,8 @@ args = ["dataroma-mcp"]
 ### Hermes
 Hermes fully supports MCP. You can add the server by running this command in your Hermes terminal:
 ```bash
-hermes mcp add dataroma-mcp uvx -- dataroma-mcp
+hermes mcp add dataroma-mcp --command uvx --args dataroma-mcp
 ```
-*(Or, configure it directly in your Hermes MCP settings using the `uvx` command and `dataroma-mcp` argument).*
 
 ## Credits
 Data sourced from [Dataroma.com](https://www.dataroma.com). This project is for educational and research purposes only.

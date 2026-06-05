@@ -9,6 +9,7 @@ dataroma_cache.json
 build/
 dist/
 *.egg-info/
+.env
 
 dataroma_mcp.egg-info
 /.env
