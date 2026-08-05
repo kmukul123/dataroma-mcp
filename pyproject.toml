@@ -4,13 +4,15 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "dataroma-mcp"
-version = "0.1.5"
+version = "0.1.12"
 description = "An MCP server for Dataroma to access superinvestor holdings and trades"
 readme = "README.md"
-requires-python = ">=3.9"
+requires-python = ">=3.10"
 dependencies = [
-    "mcp",
+    # Temporarily pin mcp < 2.0.0 because fastmcp is currently broken by the MCPError rename in mcp 2.0.0
+    "mcp<2.0.0",
     "fastmcp",
+    "pydantic-settings",
     "beautifulsoup4",
     "requests"
 ]
