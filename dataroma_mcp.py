@@ -201,7 +201,8 @@ from dataroma_scraper import (
     get_insider_trades,
     get_all_managers,
     scrape_homepage,
-    get_realtime_activity
+    get_realtime_activity,
+    get_stock_owners
 )
 
 # Initialize MCP Server
@@ -385,6 +386,15 @@ def invalidate_cache(key: str = "all"):
     
     save_cache()
     return {"status": "success", "message": message}
+
+@mcp.tool()
+def get_stock_superinvestor_owners(symbol: str):
+    """
+    Get the list of all superinvestors who currently own a specific stock.
+    Includes their portfolio percentage and recent activity (buying/selling).
+    """
+    key = f"owners_{symbol}"
+    return get_cached_data(key, get_stock_owners, 24, symbol)
 
 def main():
     load_cache()

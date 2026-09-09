@@ -4,17 +4,17 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "dataroma-mcp"
-version = "0.1.12"
+version = "0.1.16"
 description = "An MCP server for Dataroma to access superinvestor holdings and trades"
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
-    # Temporarily pin mcp < 2.0.0 because fastmcp is currently broken by the MCPError rename in mcp 2.0.0
-    "mcp<2.0.0",
-    "fastmcp",
-    "pydantic-settings",
-    "beautifulsoup4",
-    "requests"
+    # Pin mcp and fastmcp strictly to avoid upstream ecosystem breakages
+    "mcp==1.29.0",
+    "fastmcp==3.4.5",
+    "pydantic-settings>=2.14.2,<3.0.0",
+    "beautifulsoup4>=4.15.0,<5.0.0",
+    "requests>=2.34.2,<3.0.0"
 ]
 authors = [
     { name = "Onefoot Hurdle", email = "onefoothurdle@gmail.com" }
